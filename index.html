@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="30 Minutes to a Data Enabled Webform" />
+    <meta name="author" content="Michael Lynn" />
+
+    <title>30 Minutes to a Data Enabled Webform</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom fonts for this template -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet" />
+    <!-- optional additional css styles if'n y'like -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.4.0/stitch.js"></script> -->
+    <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.9.0/stitch.js"></script>
+
+    <script src="./config.js"></script>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="/index.html">Home</a>
+      </div>
+    </nav>
+
+    <!-- Form -->
+    <section class="bg-light">
+      <div class="container">
+        <h2 class="mb-5 jumbotron text-center">
+          Zero to Live in 45
+        </h2>
+        <h3>We're pre-launch - so leave your name and email so we can contact you.</h3>
+        <div class="col-md-12 mx-auto">
+          <form>
+            <div class="form-group">
+              <div class="form-row">
+                <label for="name">Name:</label>
+                <input
+                  type="text"
+                  placeholder="Your Full Name"
+                  name="name"
+                  id="name"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  placeholder="you@yourmail.com"
+                  name="email"
+                  id="email"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <label for="interest">My Interest:</label>
+                <div class="col-lg-12 col-md-12">
+                  <select name="interest" id="interest" class="form-control">
+                    <option value="Ready to Buy">Ready to Buy</option>
+                    <option value="Ready to Invest">Ready to Invest</option>
+                    <option value="Just curious">Just curious</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-12 col-md-3">
+                <p></p>
+                <button
+                  class="btn btn-block btn-lg btn-primary"
+                  onclick="sendResponse();return false;"
+                  class="btn btn-lg btn-success">
+                  Send Response
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item">
+                <a href="/about.html">About</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="/contact.html">Contact</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="/terms.html">Terms of Use</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="/privacy.html">Privacy Policy</a>
+              </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">
+              &copy; Michael Lynn 2020. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <a href="https://linkedin.com/in/mlynn">
+                  <i class="fab fa-linkedin fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mr-3">
+                <a href="https://twitter.com/mlynn">
+                  <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://instagram.com/mlynnstagram">
+                  <i class="fab fa-instagram fa-2x fa-fw"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const { Stitch, AnonymousCredential } = stitch;
+
+      function sendResponse() {
+        client.auth
+          .loginWithCredential(new stitch.AnonymousCredential())
+          .then(() => insertData())
+          .catch(err => console.error(`login failed with error: ${err}`));
+      }
+
+      function insertData() {
+        var n = new Date();
+        var obj = {};
+        obj.mdb_created = n;
+
+        console.log("In insertData...");
+
+        obj.name = $("#name").val();
+        obj.email = $("#email").val();
+        obj.interest = $("#interest").val();
+
+        obj.browser = {};
+        obj.browser.ua = navigator.userAgent || undefined;
+        obj.browser.lang = navigator.language || undefined;
+        obj.browser.plat = navigator.platform || undefined;
+        obj.owner = client.auth.authInfo.userId;
+
+        db.collection("responses")
+          .insertOne(obj)
+          .then(recordSuccess)
+          .catch(err => console.error(`login failed with error: ${err}`));
+      }
+
+      function recordSuccess() {
+        window.location = "thankyou.html";
+      }
+    </script>
+  </body>
+</html>
