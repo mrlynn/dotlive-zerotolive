@@ -64,58 +64,17 @@
         <li>Enabled you to ...</li>
         <li>Enabled you to ...</li>
         </ul>
-        What if we told you we have that product? 
-        <a class="btn btn-large" href="learnmore.html">LEARN MORE</a>
-        <div class="col-md-12 mx-auto">
-          <form>
-            <div class="form-group">
-              <div class="form-row">
-                <label for="name">Name:</label>
-                <input
-                  type="text"
-                  placeholder="Your Full Name"
-                  name="name"
-                  id="name"
-                  class="form-control"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-row">
-                <label for="email">Email:</label>
-                <input
-                  type="email"
-                  placeholder="you@yourmail.com"
-                  name="email"
-                  id="email"
-                  class="form-control"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-row">
-                <label for="interest">My Interest:</label>
-                <div class="col-lg-12 col-md-12">
-                  <select name="interest" id="interest" class="form-control">
-                    <option value="Ready to Buy">Ready to Buy</option>
-                    <option value="Ready to Invest">Ready to Invest</option>
-                    <option value="Just curious">Just curious</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-12 col-md-3">
-                <p></p>
-                <button
-                  class="btn btn-block btn-lg btn-primary"
-                  onclick="sendResponse();return false;"
-                  class="btn btn-lg btn-success">
-                  Send Response
-                </button>
-              </div>
-            </div>
-          </form>
+        <p></p>
+        What if we told you we have a product like that? 
+          <div class="text-center col-md-4 offset-md-4">
+            <button
+          class="btn btn-block btn-lg btn-primary"
+          onclick="forwardToPricing();return false;"
+          class="btn btn-lg btn-success">
+          LEARN MORE
+          </button>
+        </div>        
+        
         </div>
       </div>
     </section>
@@ -185,6 +144,10 @@
           .loginWithCredential(new stitch.AnonymousCredential())
           .then(() => insertData())
           .catch(err => console.error(`login failed with error: ${err}`));
+      }
+
+      function forwardToPricing() {
+        window.location = "pricing.html";
       }
 
       function insertData() {

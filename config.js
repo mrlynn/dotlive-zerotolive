@@ -1,8 +1,9 @@
 /**
  * Set us up the vars
  */
-STITCH_APP_ID = "zerotolive-glyvy";     // Change this to your stitch ID - found in the MongoDB Atlas Console - https://cloud.mongodb.com
-DBNAME = "zerotolive";                   // Name this whatever you like.
+STITCH_APP_ID = "zerotolive-wzzhn";     // Change this to your stitch ID - found in the MongoDB Atlas Console - https://cloud.mongodb.com
+DBNAME = "zerotolive";
+BASEURL = ""                   // Name this whatever you like.
 
 /**
  * Establish a connection to the MongoDB Atlas Service using the Stitch SDK

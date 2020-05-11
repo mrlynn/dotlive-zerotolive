@@ -57,17 +57,10 @@
         <h2 class="mb-5 jumbotron text-center">
           Zero to Live in 45
         </h2>
-        <h3>Wouldn't it be amazing if there were a product that:</h3>
-        <ul>
-        <li>Enabled you to ...</li>
-        <li>Enabled you to ...</li>
-        <li>Enabled you to ...</li>
-        <li>Enabled you to ...</li>
-        </ul>
-        What if we told you we have that product? 
-        <a class="btn btn-large" href="learnmore.html">LEARN MORE</a>
+        We're pre-launch at the moment - please leave your details so we can let you know as soon as we've launched.
         <div class="col-md-12 mx-auto">
           <form>
+              <input type='hidden' name='tier' value='free'>
             <div class="form-group">
               <div class="form-row">
                 <label for="name">Name:</label>
@@ -196,6 +189,7 @@
 
         obj.name = $("#name").val();
         obj.email = $("#email").val();
+        obj.tier = $("#tier").val();
         obj.interest = $("#interest").val();
 
         obj.browser = {};
@@ -211,7 +205,7 @@
       }
 
       function recordSuccess() {
-        window.location = "thankyou.html";
+        window.location = "thankyou-nograph.html";
       }
     </script>
   </body>
