@@ -1,0 +1,43 @@
+{
+    "title": "Zero to Live in 45",
+    "name": "Build your scalable startup landing page in no time using free services.",
+    "version": "2.0",
+    "scripts": {
+        "start": "node_modules/.bin/gulp watch",
+        "export": "node_modules/.bin/gulp export",
+        "import": "node_modules/.bin/gulp import",
+        "deploy": "node_modules/.bin/gulp deploy"
+    },
+    "description": "A Basic demonstration of going from zero to a functioning landing page with a database backend.",
+    "keywords": [
+        "css",
+        "sass",
+        "html",
+        "responsive",
+        "theme",
+        "template"
+    ],
+    "homepage": "https://www.mlynn.org",
+    "license": "MIT",
+    "author": "Michael Lynn",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mrlynn/dotlive-zerotolive.git"
+    },
+    "dependencies": {
+        "bootstrap": "4.3.1",
+        "jquery": "3.4.1"
+    },
+    "devDependencies": {
+        "browser-sync": "2.26.7",
+        "del": "^4.1.1",
+        "gulp": "4.0.2",
+        "merge-stream": "2.0.0",
+        "gulp-clean": "^0.4.0",
+        "gulp-cli": "^2.2.0",
+        "gulp-shell": "^0.8.0",
+        "mongodb-stitch-cli": "^1.12.0",
+        "dotenv": "^8.2.0",
+        "gulp-copy": "^4.0.1"
+    }
+}
